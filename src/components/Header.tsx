@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { BRAND } from '../lib/constants'
+import { publicUrl } from '../lib/images'
 import { trackCTAClick } from '../lib/analytics'
 
 export function Header() {
@@ -34,7 +35,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Left: main logo (propel SCHOOL wordmark) */}
           <a href="#" className="flex items-center shrink-0">
-            <img src="/pic/ipropel_logo.png" alt={BRAND.name} className="h-16 sm:h-20 md:h-24 w-auto object-contain" />
+            <img src={publicUrl('pic/ipropel_logo.png')} alt={BRAND.name} className="h-16 sm:h-20 md:h-24 w-auto object-contain" />
           </a>
 
           {/* Right: nav + CTA on larger screens */}

@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { motion, AnimatePresence } from 'framer-motion'
 import { trackLeadSubmit } from '../lib/analytics'
+import { publicUrl } from '../lib/images'
 
 const phoneRegex = /^[6-9]\d{9}$/
 
@@ -19,41 +20,60 @@ type FormData = z.infer<typeof schema>
 
 const childAges = ['Under 2', '2–3 years', '3–4 years', '4–5 years', '5+ years']
 
+type Phase = 'form' | 'success' | 'loading'
+
 export function LeadForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const [phase, setPhase] = useState<Phase>('form')
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { childAge: '', preferredDate: '' },
   })
 
+  // After success: wait 2s then show loading
+  useEffect(() => {
+    if (phase !== 'success') return
+    const t = setTimeout(() => setPhase('loading'), 2000)
+    return () => clearTimeout(t)
+  }, [phase])
+
+  // After loading: wait 2s then show fresh form
+  useEffect(() => {
+    if (phase !== 'loading') return
+    const t = setTimeout(() => {
+      reset()
+      setPhase('form')
+    }, 2000)
+    return () => clearTimeout(t)
+  }, [phase, reset])
+
   async function onSubmit(data: FormData) {
     try {
       trackLeadSubmit(data)
-      // Replace with your backend/CRM endpoint
       await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       }).catch(() => {})
-      // Optional: trigger WhatsApp, email automation on backend
-      setSubmitted(true)
+      setPhase('success')
     } catch {
-      setSubmitted(true)
+      setPhase('success')
     }
   }
 
-  if (submitted) {
+  if (phase === 'success') {
     return (
       <AnimatePresence mode="wait">
         <motion.div
           key="success"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
           className="rounded-2xl bg-white/90 backdrop-blur p-6 sm:p-8 shadow-xl border border-primary/20 text-center"
         >
           <motion.div
@@ -68,6 +88,29 @@ export function LeadForm() {
           </motion.div>
           <p className="text-navy font-heading font-bold text-lg">Thank you!</p>
           <p className="text-navy/80 mt-1">We’ll reach out soon to schedule your free demo.</p>
+        </motion.div>
+      </AnimatePresence>
+    )
+  }
+
+  if (phase === 'loading') {
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key="loading"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="rounded-2xl bg-white/90 backdrop-blur p-8 sm:p-12 shadow-xl border border-primary/20 flex flex-col items-center justify-center min-h-[200px]"
+        >
+          <motion.img
+            src={publicUrl('pic/ipropel_logo.png')}
+            alt=""
+            className="h-20 w-auto object-contain"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <p className="text-navy/70 text-sm mt-4 font-medium">Loading…</p>
         </motion.div>
       </AnimatePresence>
     )

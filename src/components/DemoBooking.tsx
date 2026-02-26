@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { trackCTAClick } from '../lib/analytics'
+import { publicUrl } from '../lib/images'
 
 // Replace with your Calendly URL
 const CALENDLY_EMBED_URL = 'https://calendly.com/your-iprople-demo/30min?hide_gdpr_banner=1'
@@ -23,7 +24,7 @@ export function DemoBooking() {
         {/* Subtle letters.png background – low opacity so it doesn’t distract */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.07]"
-          style={{ backgroundImage: 'url(/pic/letters.png)' }}
+          style={{ backgroundImage: `url(${publicUrl('pic/letters.png')})` }}
           aria-hidden
         />
         <div className="relative z-10 max-w-2xl mx-auto shape-cloud-card bg-white border border-navy/5 p-8 sm:p-12 text-center book-demo-shadow">

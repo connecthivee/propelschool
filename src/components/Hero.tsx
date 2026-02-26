@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { BRAND } from '../lib/constants'
+import { publicUrl } from '../lib/images'
 import { trackCTAClick } from '../lib/analytics'
 import { LeadForm } from './LeadForm'
 
@@ -49,7 +50,7 @@ export function Hero() {
       {/* Animated background from pic folder (faded, behind content) */}
       <div
         className="absolute inset-0 bg-pic-float opacity-20 pointer-events-none"
-        style={{ backgroundImage: 'url(/pic/kidcare.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        style={{ backgroundImage: `url(${publicUrl('pic/kidcare.png')})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         aria-hidden
       />
       {/* Main white card – no fade on scroll */}

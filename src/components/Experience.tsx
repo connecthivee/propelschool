@@ -2,13 +2,13 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { LottieLazy } from './LottieLazy'
 import { AnimatedImage } from './AnimatedImage'
-import { IMAGES } from '../lib/images'
+import { IMAGES, publicUrl } from '../lib/images'
 
 const panels = [
-  { title: 'Interactive Classrooms', subtitle: 'Spaces designed for discovery', lottie: '/animations/classroom.json', image: IMAGES.classroomActivity },
-  { title: 'Play-Based Learning', subtitle: 'Learn by doing', lottie: '/animations/play.json', image: IMAGES.kidsPlaying },
-  { title: 'Skill Development', subtitle: 'Foundations for life', lottie: '/animations/skills.json', image: IMAGES.kidsClassroom },
-  { title: 'Parent Communication', subtitle: 'You’re always in the loop', lottie: '/animations/communication.json', image: IMAGES.schoolBuilding },
+  { title: 'Interactive Classrooms', subtitle: 'Spaces designed for discovery', lottie: publicUrl('animations/classroom.json'), image: IMAGES.classroomActivity },
+  { title: 'Play-Based Learning', subtitle: 'Learn by doing', lottie: publicUrl('animations/play.json'), image: IMAGES.kidsPlaying },
+  { title: 'Skill Development', subtitle: 'Foundations for life', lottie: publicUrl('animations/skills.json'), image: IMAGES.kidsClassroom },
+  { title: 'Parent Communication', subtitle: 'You’re always in the loop', lottie: publicUrl('animations/communication.json'), image: IMAGES.schoolBuilding },
 ]
 
 export function Experience() {

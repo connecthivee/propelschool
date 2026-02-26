@@ -1,4 +1,5 @@
 import { BRAND, ADDRESS, WHATSAPP_LINK } from '../lib/constants'
+import { publicUrl } from '../lib/images'
 
 const footerLinks = {
   About: [{ label: 'Why iprople', href: '#why-iprople' }, { label: 'Experience', href: '#experience' }],
@@ -14,7 +15,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 mb-12">
           <div className="md:max-w-xs">
             <a href="#" className="flex items-center gap-3 mb-4 w-fit">
-              <img src="/pic/ipropel_logo.png" alt="" className="h-12 w-auto object-contain" />
+              <img src={publicUrl('pic/ipropel_logo.png')} alt="" className="h-12 w-auto object-contain" />
               <span className="font-heading font-bold text-2xl text-white">{BRAND.name}</span>
             </a>
             <p className="text-white/80 text-sm">{BRAND.tagline}</p>

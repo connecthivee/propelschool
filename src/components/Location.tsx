@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { ADDRESS } from '../lib/constants'
+import { publicUrl } from '../lib/images'
 import { LottieLazy } from './LottieLazy'
 
 export function Location() {
@@ -11,7 +12,7 @@ export function Location() {
       {/* Subtle abroad.png background */}
       <div
         className="absolute inset-0 bg-cover bg-right bg-no-repeat opacity-[0.08]"
-        style={{ backgroundImage: 'url(/pic/abroad.png)' }}
+        style={{ backgroundImage: `url(${publicUrl('pic/abroad.png')})` }}
         aria-hidden
       />
       <div className="relative z-10 max-w-6xl mx-auto rounded-3xl bg-white shadow-xl border border-navy/5 p-8 sm:p-10" ref={ref}>
@@ -39,7 +40,7 @@ export function Location() {
         >
           {/* Map pin Lottie overlay */}
           <div className="absolute top-4 right-4 z-10 w-14 h-14 pointer-events-none">
-            <LottieLazy src="/animations/map-pin.json" className="w-full h-full" />
+            <LottieLazy src={publicUrl('animations/map-pin.json')} className="w-full h-full" />
           </div>
           <iframe
             title="iprople location"
