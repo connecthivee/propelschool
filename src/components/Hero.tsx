@@ -100,7 +100,6 @@ export function Hero() {
             </div>
             <div className="flex flex-col items-center justify-center">
               <motion.div
-                id="lead-form"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -161,7 +160,7 @@ export function Hero() {
               </div>
             </div>
             <a
-              href="#lead-form"
+              href="#"
               onClick={() => trackCTAClick('hero_register')}
               className="rounded-2xl bg-accent text-white px-6 py-3 font-bold shadow-md hover:bg-accent/90 transition-all"
             >

@@ -4,7 +4,7 @@ import { publicUrl } from '../lib/images'
 const footerLinks = {
   About: [{ label: 'Why iprople', href: '#why-iprople' }, { label: 'Experience', href: '#experience' }],
   Programs: [{ label: 'Curriculum', href: '#why-iprople' }, { label: 'Book Demo', href: '#book-demo' }],
-  Contact: [{ label: 'WhatsApp', href: WHATSAPP_LINK }, { label: 'Lead Form', href: '#lead-form' }],
+  Contact: [{ label: 'WhatsApp', href: WHATSAPP_LINK }, { label: 'Lead Form', href: '#' }],
   Location: [{ label: ADDRESS.area, href: '#location' }, { label: ADDRESS.full, href: '#location' }],
 }
 

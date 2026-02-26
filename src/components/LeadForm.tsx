@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { motion, AnimatePresence } from 'framer-motion'
-import { trackLeadSubmit } from '../lib/analytics'
 import { publicUrl } from '../lib/images'
 
 const phoneRegex = /^[6-9]\d{9}$/
@@ -52,18 +51,9 @@ export function LeadForm() {
     return () => clearTimeout(t)
   }, [phase, reset])
 
-  async function onSubmit(data: FormData) {
-    try {
-      trackLeadSubmit(data)
-      await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      }).catch(() => {})
-      setPhase('success')
-    } catch {
-      setPhase('success')
-    }
+  function onSubmit(_data: FormData) {
+    // Demo only: no data sent anywhere
+    setPhase('success')
   }
 
   if (phase === 'success') {

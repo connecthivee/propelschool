@@ -52,7 +52,7 @@ export function Header() {
               ))}
             </nav>
             <a
-              href="#lead-form"
+              href="#"
               onClick={() => trackCTAClick('header_schedule_demo')}
               className="rounded-2xl bg-accent text-white px-5 py-2.5 font-semibold hover:bg-accent/90 transition-all shadow-md"
             >
@@ -95,7 +95,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="#lead-form"
+                href="#"
                 onClick={() => { trackCTAClick('header_schedule_demo'); setMenuOpen(false) }}
                 className="rounded-2xl bg-accent text-white px-5 py-2.5 font-semibold text-center"
               >
