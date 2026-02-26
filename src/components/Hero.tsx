@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-20 pb-6 sm:pb-8 px-3 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen pt-20 pb-6 sm:pb-8 px-3 sm:px-6 lg:px-8 overflow-x-hidden"
     >
       {/* Animated background from pic folder (faded, behind content) */}
       <div
@@ -54,17 +54,17 @@ export function Hero() {
         aria-hidden
       />
       {/* Main white card – no fade on scroll */}
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto w-full min-w-0 px-0">
         <div
-          className="relative rounded-[2rem] lg:rounded-[2.5rem] bg-white shadow-xl overflow-hidden"
+          className="relative rounded-[2rem] lg:rounded-[2.5rem] bg-white shadow-xl overflow-visible"
           style={{
             backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px)',
             backgroundSize: '24px 24px',
           }}
         >
-          {/* Top: left = headline, subheading, Lottie; right = lead form */}
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 lg:px-12">
-            <div>
+          {/* Top: left = headline, subheading, Lottie; right = lead form. pr for WhatsApp float on mobile */}
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 pr-20 sm:pr-6 lg:p-10 lg:px-12 w-full max-w-full box-border">
+            <div className="min-w-0 overflow-hidden">
               {/* Headline: part navy, part accent yellow */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mt-4 sm:mt-6 w-full flex justify-center"
               >
-                <div className="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-[420px] aspect-square">
+                <div className="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-[420px] aspect-square mx-auto overflow-hidden shrink-0">
                   <dotlottie-wc
                     src="https://lottie.host/87e84aba-d279-498f-9ee8-911d5fd17ce6/FLThkAvwwu.lottie"
                     style={{ width: '100%', height: '100%' }}
@@ -100,12 +100,12 @@ export function Hero() {
                 </div>
               </motion.div>
             </div>
-            <div className="flex flex-col items-center justify-center w-full min-w-0">
+            <div className="flex flex-col items-center justify-center w-full min-w-0 overflow-hidden">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="w-full max-w-sm min-w-0 scroll-mt-24"
+                className="w-full max-w-full sm:max-w-sm min-w-0 scroll-mt-24 px-0 box-border"
               >
                 <LeadForm />
               </motion.div>

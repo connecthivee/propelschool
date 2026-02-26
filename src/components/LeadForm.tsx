@@ -110,7 +110,7 @@ export function LeadForm() {
     <motion.form
       key="form"
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-2xl bg-white/90 backdrop-blur p-4 sm:p-6 lg:p-8 shadow-xl border border-primary/20 space-y-3 sm:space-y-4 w-full max-w-full box-border"
+      className="rounded-2xl bg-white/90 backdrop-blur p-4 sm:p-6 lg:p-8 shadow-xl border border-primary/20 space-y-3 sm:space-y-4 w-full max-w-full min-w-0 box-border overflow-hidden"
       initial={{ opacity: 1 }}
     >
       <h3 className="font-heading font-bold text-navy text-lg">Schedule a Free Demo</h3>
@@ -118,7 +118,7 @@ export function LeadForm() {
         <label className="block text-sm font-medium text-navy/80 mb-1">School / Parent Name *</label>
         <input
           {...register('name')}
-          className="w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+          className="w-full max-w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition box-border"
           placeholder="Your name or school"
         />
         {errors.name && <p className="text-coral text-sm mt-1">{errors.name.message}</p>}
@@ -127,7 +127,7 @@ export function LeadForm() {
         <label className="block text-sm font-medium text-navy/80 mb-1">City *</label>
         <input
           {...register('city')}
-          className="w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+          className="w-full max-w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition box-border"
           placeholder="e.g. Mumbai"
         />
         {errors.city && <p className="text-coral text-sm mt-1">{errors.city.message}</p>}
@@ -137,7 +137,7 @@ export function LeadForm() {
         <input
           {...register('phone')}
           type="tel"
-          className="w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+          className="w-full max-w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition box-border"
           placeholder="10-digit mobile"
         />
         {errors.phone && <p className="text-coral text-sm mt-1">{errors.phone.message}</p>}
@@ -146,7 +146,7 @@ export function LeadForm() {
         <label className="block text-sm font-medium text-navy/80 mb-1">Child’s Age (optional)</label>
         <select
           {...register('childAge')}
-          className="w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white"
+          className="w-full max-w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white box-border"
         >
           <option value="">Select age</option>
           {childAges.map((age) => (
@@ -159,13 +159,13 @@ export function LeadForm() {
         <input
           {...register('preferredDate')}
           type="date"
-          className="w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+          className="w-full max-w-full rounded-xl border border-navy/20 px-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition box-border"
         />
       </div>
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-2xl bg-accent text-white py-3 font-bold hover:bg-accent/90 transition disabled:opacity-70 shadow-md"
+        className="w-full max-w-full rounded-2xl bg-accent text-white py-3 font-bold hover:bg-accent/90 transition disabled:opacity-70 shadow-md box-border"
       >
         {isSubmitting ? 'Sending…' : 'Schedule a Free Demo'}
       </button>
