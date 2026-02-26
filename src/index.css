@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-navy antialiased;
+  background-color: #FFF4CC;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.35) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Lazy-load Lottie container to avoid layout shift */
+.lottie-container {
+  min-height: 200px;
+}
+
+/* Sticky header blur – white when scrolled to match template */
+header.scrolled {
+  @apply bg-white/95 backdrop-blur-md shadow-md;
+}
+
+/* Focus visible for a11y */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Animated background images (pic folder) */
+.bg-pic-animate {
+  background-size: cover;
+  background-position: center;
+  animation: bg-pic-drift 25s ease-in-out infinite;
+}
+@keyframes bg-pic-drift {
+  0%, 100% { background-position: center center; transform: scale(1); }
+  50% { background-position: 52% 48%; transform: scale(1.03); }
+}
+
+.bg-pic-float {
+  background-size: cover;
+  background-position: center;
+  animation: bg-pic-float 8s ease-in-out infinite;
+}
+@keyframes bg-pic-float {
+  0%, 100% { opacity: 0.92; }
+  50% { opacity: 1; }
+}
+
+/* Cloud-shaped card (organic blob, no square look) */
+.shape-cloud-card {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+@media (min-width: 640px) {
+  .shape-cloud-card {
+    border-radius: 50% 50% 40% 60% / 45% 55% 45% 55%;
+  }
+}
+
+/* Softer, slightly deeper shadow for Book a Free Demo cloud card */
+.book-demo-shadow {
+  box-shadow: 0 20px 40px -12px rgba(30, 42, 56, 0.15), 0 8px 20px -8px rgba(30, 42, 56, 0.1);
+}
+
+/* What Parents Say: soft rounded rectangle (like image) */
+.shape-cloud-testimonials {
+  border-radius: 2rem;
+}
+@media (min-width: 640px) {
+  .shape-cloud-testimonials {
+    border-radius: 2.5rem;
+  }
+}
+
+.testimonials-shadow {
+  box-shadow: 0 20px 40px -15px rgba(30, 42, 56, 0.1), 0 8px 24px -8px rgba(30, 42, 56, 0.06);
+}
