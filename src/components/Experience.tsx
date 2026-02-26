@@ -15,8 +15,8 @@ export function Experience() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
-      <div className="max-w-6xl mx-auto" ref={ref}>
+    <section id="experience" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full min-w-0" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -72,7 +72,7 @@ export function Experience() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.1 }}
-              className="rounded-3xl bg-white p-6 shadow-xl border border-navy/5"
+              className="rounded-2xl sm:rounded-3xl bg-white p-4 sm:p-6 shadow-xl border border-navy/5 w-full min-w-0"
             >
               <div className="relative aspect-[4/3] w-full max-w-[180px] mx-auto mb-4 rounded-2xl overflow-hidden bg-navy/5 border border-navy/10">
                 <AnimatedImage src={panel.image} alt={panel.title} className="absolute inset-0 w-full h-full" animate="fade" visible={inView} />

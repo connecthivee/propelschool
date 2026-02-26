@@ -32,10 +32,10 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           {/* Left: main logo (propel SCHOOL wordmark) */}
           <a href="#" className="flex items-center shrink-0">
-            <img src={publicUrl('pic/ipropel_logo.png')} alt={BRAND.name} className="h-16 sm:h-20 md:h-24 w-auto object-contain" />
+            <img src={publicUrl('pic/ipropel_logo.png')} alt={BRAND.name} className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain max-h-14 sm:max-h-20" />
           </a>
 
           {/* Right: nav + CTA on larger screens */}

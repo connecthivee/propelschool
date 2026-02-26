@@ -11,8 +11,8 @@ export function Testimonials() {
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: true })
 
   return (
-    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
-      <div className="max-w-5xl mx-auto shape-cloud-testimonials testimonials-shadow bg-white border border-navy/5 p-8 sm:p-12" ref={ref}>
+    <section id="testimonials" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
+      <div className="max-w-5xl mx-auto shape-cloud-testimonials testimonials-shadow bg-white border border-navy/5 p-4 sm:p-8 lg:p-12 w-full min-w-0" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -29,7 +29,7 @@ export function Testimonials() {
           No photos — just real words from our community.
         </motion.p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}

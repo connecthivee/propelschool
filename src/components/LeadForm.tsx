@@ -64,7 +64,7 @@ export function LeadForm() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          className="rounded-2xl bg-white/90 backdrop-blur p-6 sm:p-8 shadow-xl border border-primary/20 text-center"
+          className="rounded-2xl bg-white/90 backdrop-blur p-4 sm:p-6 lg:p-8 shadow-xl border border-primary/20 text-center w-full max-w-full box-border"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -91,7 +91,7 @@ export function LeadForm() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="rounded-2xl bg-white/90 backdrop-blur p-8 sm:p-12 shadow-xl border border-primary/20 flex flex-col items-center justify-center min-h-[200px]"
+          className="rounded-2xl bg-white/90 backdrop-blur p-6 sm:p-8 lg:p-12 shadow-xl border border-primary/20 flex flex-col items-center justify-center min-h-[180px] sm:min-h-[200px] w-full max-w-full box-border"
         >
           <motion.img
             src={publicUrl('pic/ipropel_logo.png')}
@@ -110,7 +110,7 @@ export function LeadForm() {
     <motion.form
       key="form"
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-2xl bg-white/90 backdrop-blur p-6 sm:p-8 shadow-xl border border-primary/20 space-y-4"
+      className="rounded-2xl bg-white/90 backdrop-blur p-4 sm:p-6 lg:p-8 shadow-xl border border-primary/20 space-y-3 sm:space-y-4 w-full max-w-full box-border"
       initial={{ opacity: 1 }}
     >
       <h3 className="font-heading font-bold text-navy text-lg">Schedule a Free Demo</h3>

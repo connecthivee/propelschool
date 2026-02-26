@@ -8,14 +8,14 @@ export function Location() {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true })
 
   return (
-    <section id="location" className="relative py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
+    <section id="location" className="relative py-16 sm:py-20 px-3 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
       {/* Subtle abroad.png background */}
       <div
         className="absolute inset-0 bg-cover bg-right bg-no-repeat opacity-[0.08]"
         style={{ backgroundImage: `url(${publicUrl('pic/abroad.png')})` }}
         aria-hidden
       />
-      <div className="relative z-10 max-w-6xl mx-auto rounded-3xl bg-white shadow-xl border border-navy/5 p-8 sm:p-10" ref={ref}>
+      <div className="relative z-10 max-w-6xl mx-auto rounded-2xl sm:rounded-3xl bg-white shadow-xl border border-navy/5 p-4 sm:p-6 lg:p-10 w-full min-w-0" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -45,7 +45,7 @@ export function Location() {
           <iframe
             title="iprople location"
             src={`https://www.google.com/maps?q=${encodeURIComponent(ADDRESS.full)}&output=embed`}
-            className="w-full h-[400px] sm:h-[450px] border-0"
+            className="w-full min-h-[280px] h-[280px] sm:h-[400px] lg:h-[450px] border-0"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -10,17 +10,17 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white pb-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto pt-16">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 mb-12">
-          <div className="md:max-w-xs">
-            <a href="#" className="flex items-center gap-3 mb-4 w-fit">
-              <img src={publicUrl('pic/ipropel_logo.png')} alt="" className="h-12 w-auto object-contain" />
-              <span className="font-heading font-bold text-2xl text-white">{BRAND.name}</span>
+    <footer className="bg-navy text-white pb-6 sm:pb-8 px-3 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto pt-12 sm:pt-16 w-full min-w-0">
+        <div className="flex flex-col md:flex-row gap-8 sm:gap-12 md:gap-16 mb-10 sm:mb-12">
+          <div className="md:max-w-xs w-full min-w-0">
+            <a href="#" className="flex items-center gap-2 sm:gap-3 mb-4 w-fit flex-wrap">
+              <img src={publicUrl('pic/ipropel_logo.png')} alt="" className="h-10 sm:h-12 w-auto object-contain shrink-0" />
+              <span className="font-heading font-bold text-xl sm:text-2xl text-white">{BRAND.name}</span>
             </a>
             <p className="text-white/80 text-sm">{BRAND.tagline}</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 flex-1 min-w-0">
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
                 <h4 className="font-heading font-semibold text-white mb-4">{title}</h4>

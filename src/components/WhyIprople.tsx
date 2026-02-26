@@ -45,11 +45,11 @@ function CircleIcon({ icon }: { icon: string }) {
 export function WhyIprople() {
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: true })
 
-  const cardSpacing = ['mt-0', 'mt-8', 'mt-16'] as const
+  const cardSpacing = ['md:mt-0', 'md:mt-8', 'md:mt-16'] as const
 
   return (
-    <section id="why-iprople" className="relative py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 bg-gradient-to-b from-amber-50/70 via-slate-50/50 to-white">
-      <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
+    <section id="why-iprople" className="relative py-16 sm:py-20 px-3 sm:px-6 lg:px-8 scroll-mt-20 bg-gradient-to-b from-amber-50/70 via-slate-50/50 to-white overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10 w-full min-w-0" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ export function WhyIprople() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.1 }}
-              className={`rounded-3xl bg-white p-8 shadow-xl border border-navy/5 hover:shadow-2xl hover:border-primary/30 transition-all ${cardSpacing[i]}`}
+              className={`rounded-2xl sm:rounded-3xl bg-white p-5 sm:p-6 lg:p-8 shadow-xl border border-navy/5 hover:shadow-2xl hover:border-primary/30 transition-all w-full min-w-0 ${cardSpacing[i]}`}
             >
               <div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-navy border-4 border-primary/40 mb-6">
                 <CircleIcon icon={card.icon} />

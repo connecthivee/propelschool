@@ -20,14 +20,14 @@ export function DemoBooking() {
 
   return (
     <>
-      <section id="book-demo" className="relative py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
+      <section id="book-demo" className="relative py-16 sm:py-20 px-3 sm:px-6 lg:px-8 scroll-mt-20 overflow-hidden">
         {/* Subtle letters.png background – low opacity so it doesn’t distract */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.07]"
           style={{ backgroundImage: `url(${publicUrl('pic/letters.png')})` }}
           aria-hidden
         />
-        <div className="relative z-10 max-w-2xl mx-auto shape-cloud-card bg-white border border-navy/5 p-8 sm:p-12 text-center book-demo-shadow">
+        <div className="relative z-10 max-w-2xl mx-auto shape-cloud-card bg-white border border-navy/5 p-4 sm:p-8 lg:p-12 text-center book-demo-shadow w-full min-w-0">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-navy mb-4">
             Book a Free Demo
           </h2>

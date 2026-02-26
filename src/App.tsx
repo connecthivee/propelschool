@@ -19,11 +19,11 @@ function App() {
       <SeoSchema />
       <ScrollDepthTracker />
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
-        <AnimatedBackgroundSection backgroundImage={BACKGROUNDS.picLetters} animate="drift" className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-navy mb-4">Come Learn With Us</h2>
+        <AnimatedBackgroundSection backgroundImage={BACKGROUNDS.picLetters} animate="drift" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center px-2">
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-navy mb-4">Come Learn With Us</h2>
             <p className="text-navy/80 text-lg">Every day is a new adventure in learning.</p>
           </div>
         </AnimatedBackgroundSection>

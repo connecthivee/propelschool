@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-20 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen pt-20 pb-6 sm:pb-8 px-3 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Animated background from pic folder (faded, behind content) */}
       <div
@@ -62,15 +62,15 @@ export function Hero() {
             backgroundSize: '24px 24px',
           }}
         >
-          {/* Top: left = headline, subheading, teach1 image; right = lead form */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 p-8 sm:p-10 lg:p-12">
+          {/* Top: left = headline, subheading, Lottie; right = lead form */}
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 lg:px-12">
             <div>
               {/* Headline: part navy, part accent yellow */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-navy leading-tight"
+                className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight"
               >
                 <span className="text-navy">Play. Learn.</span>
                 <br />
@@ -88,22 +88,24 @@ export function Hero() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="mt-6 w-full flex justify-center"
+                className="mt-4 sm:mt-6 w-full flex justify-center"
               >
-                <dotlottie-wc
-                  src="https://lottie.host/87e84aba-d279-498f-9ee8-911d5fd17ce6/FLThkAvwwu.lottie"
-                  style={{ width: 420, height: 420 }}
-                  autoplay
-                  loop
-                />
+                <div className="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-[420px] aspect-square">
+                  <dotlottie-wc
+                    src="https://lottie.host/87e84aba-d279-498f-9ee8-911d5fd17ce6/FLThkAvwwu.lottie"
+                    style={{ width: '100%', height: '100%' }}
+                    autoplay
+                    loop
+                  />
+                </div>
               </motion.div>
             </div>
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center w-full min-w-0">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="w-full max-w-sm scroll-mt-24"
+                className="w-full max-w-sm min-w-0 scroll-mt-24"
               >
                 <LeadForm />
               </motion.div>
@@ -111,8 +113,8 @@ export function Hero() {
           </div>
 
           {/* 2x2 feature circles – dark blue circle, light blue ring, white icon, label */}
-          <div className="px-8 sm:px-10 lg:px-12 pb-8">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="px-4 sm:px-10 lg:px-12 pb-6 sm:pb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               {heroFeatures.map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -131,7 +133,7 @@ export function Hero() {
           </div>
 
           {/* Bottom strip: Social Media (left) + CTA button (right) */}
-          <div className="flex flex-wrap items-center justify-between gap-4 px-8 sm:px-10 lg:px-12 py-6 bg-white border-t border-navy/10">
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 px-4 sm:px-10 lg:px-12 py-4 sm:py-6 bg-white border-t border-navy/10">
             <div className="flex items-center gap-3">
               <span className="text-navy font-semibold text-sm">Social Media</span>
               <div className="flex gap-2">
